@@ -1,11 +1,15 @@
 import React from 'react';
+import Handcards from './components/handCards/HandCards.jsx';
+import Table from './components/table/Table.jsx';
 
 class App extends React.Component {
   render() {
     return (
 
-    <p>Star to develop app</p>
-
+    <div>
+      <Table/>
+      <Handcards/>
+    </div>
 
     )
   }
