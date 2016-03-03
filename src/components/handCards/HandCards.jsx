@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from '../card/card.jsx';
+import './HandCards.scss';
+import CardViewer from './cardViewer/cardViewer.jsx';
 
 class HandCards extends React.Component {
 
@@ -18,12 +20,21 @@ class HandCards extends React.Component {
     ];
 
     let rendered = cards.map(function(card, i) {
-        return <Card key={i} card={card.art}/>;
+        return (
+          <li key={i}>
+           <Card key={i} card={card.art}/>
+          </li>
+         );
     })
 
     return (
-      <div>
-        {rendered}
+      <div className="handCards">
+        <CardViewer/>
+        <div className="holder">
+          <ul>
+            {rendered}
+          </ul>
+        </div>
       </div>
     )
 

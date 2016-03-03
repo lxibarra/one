@@ -1,0 +1,28 @@
+
+@mixin boxShadow() {
+  -webkit-box-shadow: inset 7px 10px 300px 81px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 7px 10px 300px 81px rgba(0,0,0,0.75);
+  box-shadow: inset 7px 10px 300px 81px rgba(0,0,0,0.75);
+}
+
+.handCards {
+  width:100%;
+  overflow: auto;
+  position:relative;
+  border-top: solid 1px #eee;
+  @include boxShadow();
+  .holder {
+    width:auto;
+    ul {
+      margin: 0;
+      padding:0;
+      list-style-type: none;
+      display:table;
+      li {
+        display: inline-block;
+        padding: 5px;
+        display:table-cell;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.cardViewer {
+  width:50px;
+  height:100px;
+  position:absolute;
+  top:0px;
+  left:10px;
+  border:solid 1px #eee;
+  border-top: none;
+  background-color: #000000;
+  -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.75);
+  opacity: .2;
+  transition: all .400s ease-in;
+  text-align: center;
+  padding-top: 15px;
+  &:hover {
+    opacity: 1;
+  }
+
+  .large {
+    display:inline-block;
+    margin:0 auto;
+    div {
+      width:25px;
+      height:25px;
+      background-color: #eee;
+      border-radius: 5px;
+      border:solid 1px green;
+      cursor: pointer;
+    }
+  }
+}
