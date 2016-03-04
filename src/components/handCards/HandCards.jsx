@@ -5,6 +5,23 @@ import CardViewer from './cardViewer/cardViewer.jsx';
 
 class HandCards extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentWillMount() {
+    this.setState({
+      cssThumb: 'large'
+    });
+  }
+
+  switchView(newCssClass) {
+    this.setState({
+      cssThumb:newCssClass
+    });
+  }
+
   render() {
     let cards = [
       { card:1, art:'card red-0' },
@@ -29,9 +46,9 @@ class HandCards extends React.Component {
 
     return (
       <div className="handCards">
-        <CardViewer/>
+        <CardViewer callback={ this.switchView.bind(this) }/>
         <div className="holder">
-          <ul>
+          <ul className={ this.state.cssThumb }>
             {rendered}
           </ul>
         </div>

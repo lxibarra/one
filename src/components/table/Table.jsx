@@ -7,6 +7,8 @@ class Table extends React.Component {
           <div className="woodTable">
               <div className="cardHolder">
                 <div className="card plus-4"></div>
+                <div className="card red-4"></div>
+                <div className="card green-4"></div>
               </div>
           </div>
       )
