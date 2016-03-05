@@ -1,15 +1,19 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 
 class Card extends React.Component {
-  put() {
 
+  drawCard() {
+    this.props.drawCard(this.props.card);
   }
 
   render() {
     return (
-      <a href="javascript:void(0);" onClick={this.put.bind(this)}>
-        <div className={ this.props.card }></div>
-      </a>
+      <li onClick={ this.drawCard.bind(this) } >
+        <a href="javascript:void(0);">
+          <div className={ this.props.card.art }></div>
+        </a>
+      </li>
     )
   }
 }
