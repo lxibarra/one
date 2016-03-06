@@ -2,6 +2,7 @@ import React from 'react';
 import Card from '../card/card.jsx';
 import './HandCards.scss';
 import CardViewer from './cardViewer/cardViewer.jsx';
+import playCardActions from '../../reflux/actions/playCards';
 
 class HandCards extends React.Component {
 
@@ -42,6 +43,9 @@ class HandCards extends React.Component {
     let newCards = _cards.filter((_card)=>{
       return card.card !== _card.card
     });
+
+    playCardActions.playCard(card);
+
     this.setState({
       cards:newCards
     })
