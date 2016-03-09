@@ -2,7 +2,6 @@
 
 This is an experimental app made using React+ES6, Webpack & sass. As a backend storage we will be using firebase.
 
-Screenshot
 ![alt text](http://res.cloudinary.com/www-codervelop-com/image/upload/e_shadow/v1457558998/Screen_Shot_2016-03-09_at_1.16.34_PM_bj68ni.png "One card game")
 
 
