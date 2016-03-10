@@ -64,11 +64,13 @@ class HandCards extends React.Component {
     return (
       <div className="handCards">
         <CardViewer callback={ this.switchView.bind(this) }/>
+
         <div className="holder">
           <ul className={ this.state.cssThumb }>
             {rendered}
           </ul>
         </div>
+
       </div>
     )
 
