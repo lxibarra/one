@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/card.jsx';
+import cardSet from '../../game-logic/cardSet';
 import './HandCards.scss';
 import CardViewer from './cardViewer/cardViewer.jsx';
 import playCardActions from '../../reflux/actions/playCards';
@@ -13,18 +14,8 @@ class HandCards extends React.Component {
   componentWillMount() {
     this.setState({
       cssThumb: 'large',
-      cards:[   //card id will be a random number generated on the server
-        { card:1, art:'card red-0' },
-        { card:2, art:'card red-1' },
-        { card:3, art:'card yellow-9' },
-        { card:4, art:'card blue-7' },
-        { card:5, art:'card all-color' },
-        { card:6, art:'card green-8' },
-        { card:7, art:'card blue-reverse' },
-        { card:8, art:'card card plus-4' },
-        { card:9, art:'card card-yellow-5' },
-        { card:10, art:'card card-green-2' }
-      ]
+      //fetch cards from some module that in the future will fetch from an API.
+      cards:cardSet.getCards()
     });
   }
 

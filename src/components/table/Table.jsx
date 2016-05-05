@@ -29,7 +29,7 @@ class Table extends React.Component {
 
   render() {
       let cards = this.state.cards.map((item) =>{
-          return (<div data-id={item.card } className={item.art}></div>)
+          return (<div key={ `${item.card}-table` } className={item.art}></div>)
       });
       return (
           <div className="woodTable">
