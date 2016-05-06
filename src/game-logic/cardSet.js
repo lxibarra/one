@@ -8,6 +8,10 @@ class cardSet {
         'blue',
         'red',
         'yellow',
+        'green', //repated cause of lazyness
+        'blue',
+        'red',
+        'yellow',
         'green'
       ],
       set1:{
@@ -28,7 +32,7 @@ class cardSet {
       },
       set4:{
         ['reverse']:8,
-        ['plus-2']:4,
+        ['plus-2']:8,
         none:8
       }
     }
@@ -37,9 +41,22 @@ class cardSet {
     this.setRange(cards, cardSet, 'set1');
     this.setRange(cards, cardSet, 'set2');
     this.setExtraSet(cards, cardSet, 'set3');
+    this.setExtraSet2(cards, cardSet, 'set4');
     //set 4 is missing
 
     return cards;
+  }
+
+  setExtraSet2(cards, map, key) {
+    let props = Object.keys(map[key]);
+    props.forEach(function(prop) {
+      let end = map[key][prop];
+      let colors = map.colors.slice();
+      for(let c = 0; c<end; c++) {
+        let color = colors.shift();
+        cards.push({ card:`${key}-${c}-${prop}`, color:color,  art:`card ${color}-${prop}`});
+      }
+    })
   }
 
   setExtraSet(cards, map, key) {
