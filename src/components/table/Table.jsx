@@ -1,6 +1,7 @@
 import React from 'react';
 import './table.scss';
 import playCardStore from '../../reflux/stores/playCards';
+import gameRules from '../../game-logic/game-rules';
 
 class Table extends React.Component {
 
@@ -18,13 +19,32 @@ class Table extends React.Component {
     this.unSubscribe();
   }
 
-  addCard(payLoad) {
-    console.log(payLoad);
-    let _cards = this.state.cards;
-    _cards.push(payLoad);
-    this.setState({
-      cards:_cards
-    });
+
+
+  /**
+   * addCard - Method implementation its not optimal, its current purpose
+   * its to test the game rules.  
+   *
+   * @param  {type} playedCard description
+   * @param  {type} callback   description
+   * @return {type}            description
+   */
+  addCard(playedCard, callback) {
+
+    //check if card will be accepted and store result in gameValidation variable;
+    let gameValidation = gameRules.acceptCard(this.state.cards, playedCard);
+
+    //Tell the Handcards component the status of the operation
+    // maybe it can be another action.
+    callback(gameValidation);
+
+    if(gameValidation.accepted) {
+      let _cards = this.state.cards;
+      _cards.push(playedCard);
+      this.setState({
+        cards:_cards
+      });
+    }
   }
 
   render() {

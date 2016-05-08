@@ -54,7 +54,7 @@ class cardSet {
       let colors = map.colors.slice();
       for(let c = 0; c<end; c++) {
         let color = colors.shift();
-        cards.push({ card:`${key}-${c}-${prop}`, color:color,  art:`card ${color}-${prop}`});
+        cards.push({ card:`${key}-${c}-${prop}`, color:color, value:prop,  art:`card ${color}-${prop}`});
       }
     })
   }
@@ -64,7 +64,7 @@ class cardSet {
     props.forEach(function(prop) {
           let end = map[key][prop];
           for(let c = 0; c<end; c++) {
-            cards.push({ card:`${key}-${c}-${prop}`, color:'*',  art:`card ${prop}`});
+            cards.push({ card:`${key}-${c}-${prop}`, color:'*', value:prop,  art:`card ${prop}`});
           }
     });
   }
@@ -75,7 +75,7 @@ class cardSet {
         let start = map[key][prop][0];
         let end = map[key][prop][1];
         for(let c = start; c<=end; c++) {
-          cards.push({ card:`${key}-${c}-${prop}`, color:prop,  art:`card ${prop}-${c}`});
+          cards.push({ card:`${key}-${c}-${prop}`, color:prop, value:c.toString(),  art:`card ${prop}-${c}`});
         }
     });
   }
