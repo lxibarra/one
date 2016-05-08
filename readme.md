@@ -18,3 +18,4 @@ Currently it does not do much but this are the features i would like to implemen
 1. Install Webpack development server globally `npm install -g webpack-dev-server`
 1. Install dependencies `npm install `
 1. Run app `webpack-dev-server` App should come live on http://localhost:8080/webpack-dev-server/
+1. Run tests `npm run test`
