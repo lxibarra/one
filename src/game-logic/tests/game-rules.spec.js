@@ -1,7 +1,6 @@
-import chai from 'chai';
+import {expect} from 'chai';
 import gameLogic from '../game-rules';
 
-const expect = chai.expect;
 const testCards = gameLogic.acceptCard;
 
 describe("Test game-rules methods", ()=> {
