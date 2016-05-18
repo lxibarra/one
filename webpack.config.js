@@ -33,7 +33,7 @@ module.exports = {
            {
                 test:/\.scss$/,
                 include: path.join(__dirname, 'src'),
-                loader: process.env.NODE_ENV === 'test'? 'null-loader' : 'style!css!sass'
+                loader: process.env.NODE_ENV == 'test'? 'null-loader' : 'style!css!sass'
            }
         ]
     }
