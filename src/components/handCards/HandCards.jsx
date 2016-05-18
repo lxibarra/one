@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../card/card.jsx';
 import cardSet from '../../game-logic/cardSet';
-import './HandCards.scss';
+import './handCards.scss';
 import CardViewer from './cardViewer/cardViewer.jsx';
 import playCardActions from '../../reflux/actions/playCards';
 
