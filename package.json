@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha tools/testSetup.js --require ignore-styles  src/**/**.spec.js "
+    "test": "mocha tools/testSetup.js src/**/**.spec.js --require ignore-styles"
   },
   "repository": {
     "type": "git",
