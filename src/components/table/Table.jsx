@@ -2,6 +2,7 @@ import React from 'react';
 import './table.scss';
 import playCardStore from '../../reflux/stores/playCards';
 import gameRules from '../../game-logic/game-rules';
+import { Link } from 'react-router';
 
 class Table extends React.Component {
 
@@ -23,7 +24,7 @@ class Table extends React.Component {
 
   /**
    * addCard - Method implementation its not optimal, its current purpose
-   * its to test the game rules.  
+   * its to test the game rules.
    *
    * @param  {type} playedCard description
    * @param  {type} callback   description
