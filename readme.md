@@ -18,7 +18,11 @@ Currently it does not do much but this are the features i would like to implemen
 1. SVG all the way, currently the app uses png sprites.
 
 ## Installation
+1. Create a free firebase account here https://firebase.google.com/
+1. Rename src/firebase.keys.sample.js to src/firebase.keys.js
+1. Get your application keys from firebase and replace accordingly on firebase.keys.js (Look for add firebase to your webapp on firebase's website)
+1. To enable social login, just add/remove buttons from src/pages/login.jsx render method and follow the instructions here https://firebase.google.com/docs/auth/#key_functions under Federated identity `provider integration -> web` for the integrations you want to support. You only need to provide the proper credentials to firebase (no code chage is needed).
 1. Install Webpack development server globally `npm install -g webpack-dev-server`
 1. Install dependencies `npm install `
-1. Run app `webpack-dev-server` App should come live on http://localhost:8080/webpack-dev-server/
+1. Run app `npm run start` App should come live on http://localhost:8080/webpack-dev-server/
 1. Run tests `npm run test`
