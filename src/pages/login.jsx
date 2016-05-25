@@ -25,11 +25,12 @@ class Login extends React.Component {
      Firebase.initializeApp(firebaseConfig);
   }
 
-  twitterLogin() {
+  socialLogin(evt) {
     this.setState({
       loginError:'hide'
     });
-    let provider = new Firebase.auth.TwitterAuthProvider();
+    let nameProvider = evt.target.getAttribute('data-provider');
+    let provider = new Firebase.auth[nameProvider]();
     Firebase.auth().signInWithPopup(provider).then((result)=>{
       browserHistory.push('/play');
     }).catch((error)=>{
@@ -37,6 +38,7 @@ class Login extends React.Component {
         loginError:'show'
       });
     })
+
   }
 
   render() {
@@ -62,10 +64,10 @@ class Login extends React.Component {
                           <p>Please login using one of the following methods</p>
                           <div className="text-center">
                              <div className="">
-                                <button onClick={this.twitterLogin.bind(this)} className="btn btn-info btn-block">Twitter <i className="fa fa-twitter"></i></button>
-                                <Link to="/play" className="btn btn-primary btn-block">Facebook <i className="fa fa-facebook"></i></Link>
-                                <Link to="/play" className="btn btn-default btn-block">Github <i className="fa fa-github-alt"></i> </Link>
-                                <Link to="/play" className="btn btn-danger btn-block">Google <i className="fa fa-google-plus"></i></Link>
+                                <button onClick={this.socialLogin.bind(this)} data-provider="TwitterAuthProvider" className="btn btn-info btn-block">Twitter <i className="fa fa-twitter"></i></button>
+                                <button onClick={this.socialLogin.bind(this)} data-provider="FacebookAuthProvider" className="btn btn-primary btn-block">Facebook <i className="fa fa-facebook"></i></button>
+                                <button onClick={this.socialLogin.bind(this)} data-provider="GithubAuthProvider" className="btn btn-default btn-block">Github <i className="fa fa-github-alt"></i> </button>
+                                <button onClick={this.socialLogin.bind(this)} data-provider="GoogleAuthProvider" className="btn btn-danger btn-block">Google <i className="fa fa-google-plus"></i></button>
                              </div>
                           </div>
 
