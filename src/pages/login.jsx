@@ -1,9 +1,6 @@
 /*
   Firebase auth docs
   https://firebase.google.com/docs/auth/#key_functions
-  Documentation for twitter authentication
-  https://firebase.google.com/docs/auth/web/twitter-login#redirect-mode
-
 */
 
 import React from 'react';

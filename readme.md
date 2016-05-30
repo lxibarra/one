@@ -12,7 +12,7 @@ This is an experimental app made using React+ES6, Webpack & sass. As a backend s
 ## Features
 Currently it does not do much but this are the features i would like to implement in the future:
 
-1. User registration using github, google, twitter etc.
+1. ~~User registration using github, google, twitter etc.~~ **Done**
 1. Multigame platform (Host any number of games at the same time)
 1. Multiplayer with live updates probably using socket.io
 1. SVG all the way, currently the app uses png sprites.
