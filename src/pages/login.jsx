@@ -7,7 +7,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import Firebase from 'firebase';
 import { browserHistory } from 'react-router';
-import firebaseConfig from '../firebase.keys.js';
+import {keys} from '../firebase.keys.js';
 
 
 class Login extends React.Component {
@@ -19,7 +19,7 @@ class Login extends React.Component {
   componentWillMount() {
     this.setState({ loginError:'hide'});
 
-     Firebase.initializeApp(firebaseConfig);
+     Firebase.initializeApp(keys);
   }
 
   socialLogin(evt) {

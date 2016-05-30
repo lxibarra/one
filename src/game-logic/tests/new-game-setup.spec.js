@@ -2,6 +2,8 @@ import {expect} from 'chai';
 import cardSet from '../cardSet';
 import {createGame} from '../lib/create-game';
 
+import db from '../lib/database-layer';
+
 describe("new Game setup object creation", function() {
 
     let setUp;
@@ -21,12 +23,11 @@ describe("new Game setup object creation", function() {
       expect(setUp.pileCards.length).to.be.equal(94);
     });
 
-    describe("Game saves to database", ()=>{
-
-        it('Game is created in database', ()=>{
-            //Continue from here, store game setUp in firebase database
-            //Make sure firebase can be easily swapped for anything else.
-        });
-
+    //Delete this test cause it wont run in travis
+    it('create database record', (done)=> {
+      db.saveNewGame(setUp).then(function(data) {
+         console.log('data returned from promise', data);
+        done();
+      });
     })
 })
