@@ -1,4 +1,8 @@
-//import playCardStore from '../../reflux/stores/playCards';
+
+
+/**
+ * Checks if the incomming card matches the on in the table.
+ */
 import playCardsStore from '../reflux/stores/playCards';
 
 class GameRules {
