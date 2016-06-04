@@ -1,10 +1,23 @@
 import cardSet from '../cardSet';
-import {
-    shuffle
-} from './utils';
+import {shuffle} from './utils';
+
+const failResponse = (errorMessage) => {  return { created:false, errorMessage } }
+
 
 export const createGame = (arr) => {
-    if (arr.length > 1 && arr.length <= 10) {
+    if (arr instanceof Array && arr.length > 1 && arr.length <= 10) {
+        //Validations
+        // Player id exists
+        if(arr.filter((player)=> typeof player.playerId !== 'undefined').length === 0) {
+          return failResponse('Some or all Array elements do not contain playerId property');
+        }
+
+        //Player id's are not repeated.
+        if(new Set(arr.map((player)=> player.playerId)).size !== arr.length) {
+          return failResponse('PlayerId may not me more than once in a single game');
+        }
+
+        
         let avaliableCards = cardSet.getCards();
         shuffle(avaliableCards);
         let game = {
@@ -22,8 +35,9 @@ export const createGame = (arr) => {
             game.players.push(player);
         });
         game.pileCards = avaliableCards;
+        game.created = true;
         return game
     } else {
-      return -1;
+      return failResponse('Array parameters are not correct need more than 1 and no more than 10 players');
     }
 }
